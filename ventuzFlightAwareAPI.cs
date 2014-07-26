@@ -22,20 +22,8 @@ public class Script : ScriptBase, System.IDisposable
         // Note: Accessing input or output properties from this method
         // will have no effect as they have not been allocated yet.
 		
-		try 
-		{	        
-			df = new FlightXML2();
-			df.Credentials = new NetworkCredential("user_name", "api_key");
-			df.PreAuthenticate = true;
-		}
-		catch (Exception ex)
-		{
-		
-			Ventuz.Kernel.VLog.Info("Exception", ex.ToString());
-		}
-
-
-		// get the flights currently enroute.
+	
+	
 	
 		
     }
@@ -90,14 +78,39 @@ public class Script : ScriptBase, System.IDisposable
 		System.Console.WriteLine(df.Metar("KAUS"));
 	}
 	
-	// This Method is called if the function/method Method1 is invoked by the user or a bound event.
+	
+	// This Method is called if the function/method Connect is invoked by the user or a bound event.
 	// Return true, if this component has to be revalidated!
-	public bool OnMethod1(int arg)
+	public bool OnConnect(int arg)
+	{
+		
+		try 
+		{	        
+			df = new FlightXML2();
+			df.Credentials = new NetworkCredential(user_name, api_key);
+			df.PreAuthenticate = true;
+		}
+		catch (Exception ex)
+		{
+		
+			Ventuz.Kernel.VLog.Info("Exception", ex.ToString());
+		}
+
+
+		return false;
+	}
+	
+
+	
+	// This Method is called if the function/method GetDataAsync is invoked by the user or a bound event.
+	// Return true, if this component has to be revalidated!
+	public bool OnGetDataAsync(int arg)
 	{
 		Task t = new Task(new Action(getData));
 		t.Start();
 		return false;
 	}
+
 
 }
 
