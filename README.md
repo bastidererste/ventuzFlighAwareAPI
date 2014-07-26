@@ -1,9 +1,8 @@
 ventuzFlighAwareAPI
 ===================
+this script provides easy access to FlightAwares API FlightXML2 through WSDL class integration. Output is sent to VLog.Info. To see output switch the message level to "Info".
 
 #### Create the following inputs & outputs:
-
-this script provides easy access to FlightAwares API FlightXML2 through WSDL class integration. Output is sent to VLog.Info. To see output switch the message vies to "Info".
 
 ##### inputs
 
