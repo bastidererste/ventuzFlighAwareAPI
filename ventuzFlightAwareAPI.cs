@@ -46,15 +46,15 @@ public class Script : ScriptBase, System.IDisposable
     //               new value and they therefore need to validate. For
     //               performance reasons, only return true if output
     //               values really have been changed.
-    public override bool Generate()
-    {
-        if (changed)
-        {
-            changed = false;
-            return true;
-        }
-
-        return false;
+	public override bool Generate()
+    	{
+	        if (changed)
+	        {
+	            changed = false;
+	            return true;
+	        }
+	
+	        return false;
 	}
 	
 
