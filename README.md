@@ -10,14 +10,14 @@ this script provides easy access to FlightAwares API FlightXML2 through WSDL pro
 | ------------- |-------------|
 | string      | user_name |
 | string      | api_key |
-| method      | GetDatAsync |
-| method      | Connect |
+| method      | getData |
+| method      | connect |
 
 ##### outputs
 
 | type          | name          |
 | ------------- |-------------|
-| 
+| String[]|Data|
 
 #### precautions
 This code is provided as is! 
